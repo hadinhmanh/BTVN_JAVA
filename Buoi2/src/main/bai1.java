@@ -6,10 +6,16 @@ public class bai1 {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		int ngay,thang,nam;
-		System.out.print("nhập ngày:");
-		ngay = scanner.nextInt();
-		System.out.print("nhập tháng: ");
-		thang = scanner.nextInt();
+		do {
+			System.out.print("nhập ngày:");
+			ngay = scanner.nextInt();
+		}while(ngay <=0 || ngay >=31);
+
+		do {
+			System.out.print("nhập tháng: ");
+			thang = scanner.nextInt();
+		}while(thang <= 0 || thang >= 13);
+		
 		System.out.print("nhập năm: ");
 		nam = scanner.nextInt();
 		switch(thang) {
