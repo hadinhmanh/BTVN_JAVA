@@ -29,17 +29,17 @@ public class HinhChuNhat {
 	
 	public void output() {
 //		System.out.printf("%-10s%-10s%-10s\n" , "Chiều dài" , "Chiều rộng" , "Chu vi", "Diện tích");
-        System.out.printf("%-15d%-15d%-15d%-15d\n" , chieuDai , chieuRong, chuVi(chieuDai, chieuRong), dienTich(chieuDai,chieuRong) );
+        System.out.printf("%-15d%-15d%-15d%-15d\n" , chieuDai , chieuRong, chuVi(), dienTich() );
 	}
 	
-	public static int chuVi(int a, int b) {
-		int chuVi = (a+b)*2;
-		return chuVi;
+	public int chuVi() {
+		return (chieuDai+chieuRong)*2;
 	}
 	
-	public static int dienTich(int a, int b) {
-		return a*b;
+	public int dienTich() {
+		return chieuDai*chieuRong;
 	}
+	
 	public static void main(String[] args) {
 		HinhChuNhat HinhChuNhata = new HinhChuNhat();
 		HinhChuNhat HinhChuNhatb = new HinhChuNhat();
@@ -58,8 +58,8 @@ public class HinhChuNhat {
 		System.out.printf("%-15s%-15s%-15s%-15s\n","Chiều dài","Chiều rộng","Chu vi","Diện tích");
 		HinhChuNhata.output();
 		HinhChuNhatb.output();
-		int s1 = HinhChuNhata.dienTich(HinhChuNhata.chieuDai, HinhChuNhata.chieuRong);
-		int s2 = HinhChuNhatb.dienTich(HinhChuNhatb.chieuDai, HinhChuNhatb.chieuRong);
+		int s1 = HinhChuNhata.dienTich();
+		int s2 = HinhChuNhatb.dienTich();
 		if(s1>s2) {
 			System.out.println("Diện tích hình chữ nhật a lớn hơn b");
 		}else if(s1==s2) {
